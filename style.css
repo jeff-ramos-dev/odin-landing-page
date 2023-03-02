@@ -1,15 +1,37 @@
+:root {
+  --dark-bg-color: #1f2937;
+  --hero-main-text-color: #f9faf8;
+  --hero-main-text-size: 48px;
+  --hero-secondary-text-color: #e5e7eb;
+  --hero-secondary-text-size: 18px;
+  --cta-bg-color: #3882f6;
+  --info-header-text-color: #1f2937;
+  --info-header-text-size: 36px;
+  --quote-bg-color: #e5e7eb;
+  --quote-text-color: #1f2937;
+  --quote-text-size: 36px;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--dark-bg-color)
 }
 
 .header-logo {
     width: 80px;
+    margin-left: 6px;
 }
 
 .header-links {
   display: flex;
+  font-size: var(--hero-secondary-text-size);
+  color: var(--hero-secondary-text-color);
 }
 
 li {
@@ -18,7 +40,8 @@ li {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: var(--hero-secondary-text-color);
 }
 
 .hero {
@@ -27,38 +50,63 @@ a {
   align-items: center;
   padding: 24px 80px;
   gap: 24px;
+  background-color: var(--dark-bg-color);
 }
 
 .hero-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero-title {
   text-align: left; 
+  font-size: var(--hero-main-text-size);
+  font-weight: bolder;
+  color: var(--hero-main-text-color);
 }
 
 .hero-text {
   text-align: left;
+  font-size: var(--hero-secondary-text-size);
+  color: var(--hero-main-text-color);
 }
 
 .hero-btn {
   align-self: baseline;
+  background-color: var(--cta-bg-color);
+  color: var(--hero-secondary-text-color);
+  height: 32px;
+  width: 128px;
 }
 
 .hero-img {
   width: 360px;
+  border-radius: 10px;
+}
+
+button {
+  align-self: baseline;
+  background-color: var(--cta-bg-color);
+  color: var(--hero-secondary-text-color);
+  height: 32px;
+  width: 128px;border-radius: 6px;
+  font-weight: bold;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  background-image: url("./images/stormtroopers-docking-bay.jpg"), linear-gradient(0.25turn, #777, #777);
+  background-blend-mode: screen;
+  background-position: 50% 50%;
 }
 
 .info-title {
   text-align: center;
+  font-size: var(--info-header-text-size);
+  color: var(--info-header-text-color);
 }
 
 .info-cards {
@@ -70,38 +118,51 @@ a {
 .card {
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 32px; 
   text-align: center;
+  height: 100px;
+  width: 250px;
+  margin-bottom: -20px;
 }
 
 .card-img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
+  border: 2px solid var(--cta-bg-color);
   margin: 8px 0;
-}
-
-:nth-last-of-type(img) {
-    filter: brightness(180%)
 }
 
 .card-text {
   text-align: center;
-  font-size: 8px;
+  font-size: var(--hero-secondary-text-size);
+  font-weight: bold;
+  height: 300px;
 }
 
 .quote {
   text-align: center;
+  background-color: var(--quote-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
 }
 
 .quote-text {
-  font-size: 24px;
+  max-width: 720px;
+  font-size: var(--quote-text-size);
+  color: var(--quote-text-color);
   font-style: italic;
+  margin-top: -10px;
 }
 
 .quote-author {
@@ -111,19 +172,28 @@ a {
 
 .cta {
   margin: 0 24px;
-  padding: 12px;
+  padding: 36px 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cta-card {
   display: flex;
-  padding: 24px;
+  max-width: 800px;
+  padding: 12px 24px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex: 1;
+  background-color: var(--cta-bg-color);
+  border-radius: 10px;
 }
 
 .cta-text {
-  flex: 3;
+  flex: 2;
   padding: 0 12px;
+  min-width: 100px;
+  color: white;
 }
 
 .cta-title {
@@ -132,19 +202,25 @@ a {
 
 .cta-desc {
   font-size: 12px;
-  width: 280px;
+}
+
+.cta-btn-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cta-btn {
-  flex: 1;
-  height: 24px;
-  width: fit-content;
+  border: 2px solid white;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: var(--dark-bg-color);
+  color: var(--hero-secondary-text-color);
 }
 
 .footer-legal {
@@ -152,7 +228,12 @@ a {
   text-align: center;
 }
 
-.footer-credits {
+.footer-credits-top {
+  font-size: 10px;
+  text-align: center;
+}
+
+.footer-credits-bottom {
   font-size: 10px;
   text-align: center;
 }
